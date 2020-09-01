@@ -21,11 +21,13 @@ function solution(prevInput) {
 		return input;
 	}
 
-	const lastChar = input[3];
-	const thirdChar = input[2];
+	const lastChar = input[4];
+	const llChar = input[3];
+	const lllChar = input[2];
 
 	input[2] = lastChar;
-	input[3] = thirdChar;
+	input[3] = llChar;
+	input[4] = lllChar;
 
 	return input;
 }
