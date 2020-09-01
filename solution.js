@@ -10,6 +10,27 @@ function isEqualOrShorterThan1Array(prevInput) {
 	return !isLong;
 }
 
+function swipe(input, firstIdx, secondIdx) {
+	const firstValue = input[firstIdx];
+	const secondValue = input[secondIdx];
+
+	input[firstIdx] = secondValue;
+	input[secondIdx] = firstValue;
+}
+
+function swipeWord(input) {
+	const inputLength = input.length;
+
+	let beginIdx = 0;
+	let endIdx = inputLength - 1;
+
+	while (beginIdx <= endIdx) {
+		swipe(input, beginIdx, endIdx);
+		beginIdx += 1;
+		endIdx -= 1;
+	}
+}
+
 function solution(prevInput) {
 	if (isEqualOrShorterThan1Array(prevInput)) {
 		return prevInput;
@@ -17,15 +38,7 @@ function solution(prevInput) {
 
 	let input  = [...prevInput];
 
-	const lChar = input[2];
-	const llChar = input[1];
-	const lllChar = input[0];
-
-	input[2] = lllChar;
-	input[1] = llChar;
-	input[0] = lChar;
-
-	input = [input[0] && input[0], input[1], input[2]];
+	swipeWord(input);
 
 	return input;
 }
