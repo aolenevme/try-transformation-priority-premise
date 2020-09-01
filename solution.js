@@ -18,11 +18,9 @@ function swipe(input, firstIdx, secondIdx) {
 	input[secondIdx] = firstValue;
 }
 
-function swipeWord(input) {
-	const inputLength = input.length;
-
-	let beginIdx = 0;
-	let endIdx = inputLength - 1;
+function swipeWord(input, beginIdx, endIdx) {
+	let bi = beginIdx;
+	let ei = endIdx;
 
 	while (beginIdx <= endIdx) {
 		swipe(input, beginIdx, endIdx);
@@ -38,8 +36,12 @@ function solution(prevInput) {
 
 	let input  = [...prevInput];
 
-	swipeWord(input);
+	// const inputLength = input.length - 1;
 
+	// swipeWord(input, 0, inputLength);
+
+	swipeWord(input, 0, 0);
+	swipeWord(input, 2, 3);
 	return input;
 }
 
