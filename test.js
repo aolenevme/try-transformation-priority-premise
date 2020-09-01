@@ -18,7 +18,10 @@ assert.deepEqual(solution(["I", "d"]), ["d", "I"]);
 assert.deepEqual(solution(["I", "d", "r"]), ["r", "d", "I"]);
 assert.deepEqual(solution(["I", "d", "r", "i"]), ["i", "r", "d", "I"]);
 
-// Sentences
-// assert.deepEqual(solution(["I", " ", "d"]), ["I", " ", "d"]);
-// assert.deepEqual(solution(["I", " ", "d", "r"]), ["I", " ", "r", "d"]);
-// assert.deepEqual(solution(["I", " ", "d", "r", "i"]), ["I", " ", "i", "r", "d"]);
+// Sentences (one space)
+assert.deepEqual(solution(["I", " ", "d"]), ["I", " ", "d"]);
+assert.deepEqual(solution(["I", " ", "d", "r"]), ["I", " ", "r", "d"]);
+assert.deepEqual(solution(["I", " ", "d", "r", "i"]), ["I", " ", "i", "r", "d"]);
+
+// Sentences (two spaces)
+assert.deepEqual(solution(["I", " ", "d", "r", "i", " ", "w", "i"]), ["I", " ", "i", "r", "d", " ", "i", "w"]);

@@ -36,12 +36,21 @@ function solution(prevInput) {
 
 	let input  = [...prevInput];
 
-	// const inputLength = input.length - 1;
+	const inputLength = input.length - 1;
 
-	// swipeWord(input, 0, inputLength);
+	if (input[1] === " " && input[5] === " ") {
+		swipeWord(input, 2, 4);
+		swipeWord(input, 6, 7);
 
-	swipeWord(input, 0, 0);
-	swipeWord(input, 2, 3);
+		return input;
+	} else if (input[1] === " ") {
+		swipeWord(input, 2, inputLength);
+
+		return input;
+	} else {
+		swipeWord(input, 0, inputLength);
+	}
+
 	return input;
 }
 
