@@ -2,24 +2,20 @@ function isArray(prevInput) {
 	return Array.isArray(prevInput);
 }
 
-function isEmptyArray(prevInput) {
+function isEqualOrShorterThan3Array(prevInput) {
 	const ia = isArray(prevInput);
 
-	const hasElements = ia && Boolean(prevInput.length);
+	const isLong = ia && prevInput.length > 3;
 
-	return !hasElements;
+	return !isLong;
 }
 
 function solution(prevInput) {
-	if (isEmptyArray(prevInput)) {
+	if (isEqualOrShorterThan3Array(prevInput)) {
 		return prevInput;
 	}
 
 	const input  = [...prevInput];
-
-	if (input.length <= 3) {
-		return input;
-	}
 
 	const lastChar = input[4];
 	const llChar = input[3];
