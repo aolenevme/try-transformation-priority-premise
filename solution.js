@@ -17,9 +17,11 @@ function solution(prevInput) {
 
 	const input  = [...prevInput];
 
-	const lChar = input[1];
-	const llChar = input[0];
+	const lChar = input[2];
+	const llChar = input[1];
+	const lllChar = input[0];
 
+	input[2] = lllChar;
 	input[1] = llChar;
 	input[0] = lChar;
 
