@@ -15,7 +15,7 @@ function solution(prevInput) {
 		return prevInput;
 	}
 
-	const input  = [...prevInput];
+	let input  = [...prevInput];
 
 	const lChar = input[2];
 	const llChar = input[1];
@@ -24,6 +24,8 @@ function solution(prevInput) {
 	input[2] = lllChar;
 	input[1] = llChar;
 	input[0] = lChar;
+
+	input = [input[0] && input[0], input[1], input[2]];
 
 	return input;
 }
