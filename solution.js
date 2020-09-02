@@ -29,6 +29,22 @@ function swipeWord(input, beginIdx, endIdx) {
 	}
 }
 
+function hasWhitespaces(input) {
+	let idx = 0;
+	let hw = false;
+
+	while (idx < input.length) {
+		if (input[idx] === " ") {
+			hw = true;
+			break;
+		}
+
+		idx += 1;
+	}
+
+	return hw;
+}
+
 function solution(prevInput) {
 	if (isEqualOrShorterThan1Array(prevInput)) {
 		return prevInput;
@@ -37,6 +53,10 @@ function solution(prevInput) {
 	let input  = [...prevInput];
 
 	const inputLength = input.length - 1;
+
+	if (!hasWhitespaces(input)) {
+		swipeWord(input, 0, inputLength);
+	}
 
 	if (input[1] === " " && input[5] === " ") {
 		swipeWord(input, 2, 4);
@@ -47,8 +67,6 @@ function solution(prevInput) {
 		swipeWord(input, 2, inputLength);
 
 		return input;
-	} else {
-		swipeWord(input, 0, inputLength);
 	}
 
 	return input;
