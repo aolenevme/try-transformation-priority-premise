@@ -45,7 +45,12 @@ function hasWhitespaces(input) {
 	return hw;
 }
 
-function getEndWordIdx(curIdx, inputLength) {
+function getEndWordIdx(curIdx, curChar, inputLength) {
+
+	if (curChar === " " && curIdx === inputLength - 1) {
+		return curIdx - 1;
+	}
+
 	if (curIdx === 0 || curIdx === inputLength - 1) {
 		return curIdx;
 	}
@@ -63,7 +68,7 @@ function swipeSentence(input) {
 
 		if (curChar === " " || curIdx === inputLength - 1) {
 			const beginWordIdx = prevIdx + 1;
-			const endWordIdx = getEndWordIdx(curIdx, inputLength);
+			const endWordIdx = getEndWordIdx(curIdx, curChar, inputLength);
 
 			swipeWord(input, beginWordIdx, endWordIdx);
 
