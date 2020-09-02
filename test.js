@@ -13,15 +13,22 @@ assert.deepEqual(solution([]), []);
 assert.deepEqual(solution(NaN), NaN);
 
 // Words
-//assert.deepEqual(solution(["I"]), ["I"]);
-//assert.deepEqual(solution(["I", "d"]), ["d", "I"]);
-//assert.deepEqual(solution(["I", "d", "r"]), ["r", "d", "I"]);
-//assert.deepEqual(solution(["I", "d", "r", "i"]), ["i", "r", "d", "I"]);
+assert.deepEqual(solution(["I"]), ["I"]);
+assert.deepEqual(solution(["I", "d"]), ["d", "I"]);
+assert.deepEqual(solution(["I", "d", "r"]), ["r", "d", "I"]);
+assert.deepEqual(solution(["I", "d", "r", "i"]), ["i", "r", "d", "I"]);
 
 // Sentences (one space)
-// assert.deepEqual(solution(["I", " ", "d"]), ["I", " ", "d"]);
+assert.deepEqual(solution([" "]), [" "]);
+assert.deepEqual(solution([" ", "I"]), [" ", "I"]);
+assert.deepEqual(solution([" ", "I", "d"]), [" ", "d", "I"]);
+assert.deepEqual(solution(["I", "d", " "]), ["d", "I", " "]);
+assert.deepEqual(solution(["I", " ", "d"]), ["I", " ", "d"]);
 assert.deepEqual(solution(["I", " ", "d", "r"]), ["I", " ", "r", "d"]);
-// assert.deepEqual(solution(["I", " ", "d", "r", "i"]), ["I", " ", "i", "r", "d"]);
+assert.deepEqual(solution(["I", " ", "d", "r", "i"]), ["I", " ", "i", "r", "d"]);
 
 // Sentences (two spaces)
-// assert.deepEqual(solution(["I", " ", "d", "r", "i", " ", "w", "i"]), ["I", " ", "i", "r", "d", " ", "i", "w"]);
+assert.deepEqual(solution(["I", " ", "d", "r", "i", " ", "w", "i"]), ["I", " ", "i", "r", "d", " ", "i", "w"]);
+
+// Sentences (actual test case)
+assert.deepEqual(solution(["I", " ", "d", "r", "i", "v", "e", " ", "w", "i", "t", "h", " ", "B", "o", "l", "t"]), ["I", " ", "e", "v", "i", "r", "d", " ", "h", "t", "i", "w", " ", "t", "l", "o", "B"]);
