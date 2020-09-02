@@ -1,4 +1,4 @@
-# Example of a kata done with Trasformation Priority Premise
+# Example of a kata done with TDD and Trasformation Priority Premise
 
 ## [Task](./task.js)
 
