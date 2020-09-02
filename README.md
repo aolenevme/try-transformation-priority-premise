@@ -1,7 +1,8 @@
 # Example of a kata done with Trasformation Priority Premise
-[Task](./task.js)
 
+## [Task](./task.js)
 
+## Flow
     1. Null
     2. Null to Constant
     3. Constant to Variable
