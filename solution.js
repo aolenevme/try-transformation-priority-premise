@@ -1,11 +1,11 @@
-function isArray(prevInput) {
-	return Array.isArray(prevInput);
+function isArray(input) {
+	return Array.isArray(input);
 }
 
-function isEqualOrShorterThan1Array(prevInput) {
-	const ia = isArray(prevInput);
+function isEqualOrShorterThan1Array(input) {
+	const ia = isArray(input);
 
-	const isLong = ia && prevInput.length > 1;
+	const isLong = ia && input.length > 1;
 
 	return !isLong;
 }
@@ -77,12 +77,10 @@ function swipeSentence(input) {
 	}
 }
 
-function solution(prevInput) {
-	if (isEqualOrShorterThan1Array(prevInput)) {
-		return prevInput;
+function solution(input) {
+	if (isEqualOrShorterThan1Array(input)) {
+		return input;
 	}
-
-	let input  = [...prevInput];
 
 	const inputLength = input.length - 1;
 
